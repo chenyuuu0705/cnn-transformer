@@ -34,3 +34,11 @@ model = build_cnn_transformer(config)
 ```bash
 python Network/cnn_transformer.py
 ```
+
+## Training
+
+Expect an ImageFolder-style dataset with `dataset/train` and `dataset/val` folders.
+
+```bash
+python train.py --data-dir dataset --epochs 20 --batch-size 64
+```
