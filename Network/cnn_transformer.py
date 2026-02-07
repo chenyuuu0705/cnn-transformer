@@ -97,8 +97,9 @@ class CNNTransformerClassifier(nn.Module):
 
     def _num_patches(self, image_size: int) -> int:
         reduced = image_size
-        for _ in range(len(self.config.cnn_channels)):
-            reduced = reduced // 2
+        for idx in range(len(self.config.cnn_channels)):
+            if idx == 0:
+                reduced = reduced // 2
             reduced = reduced // 2
         return reduced * reduced
 
